@@ -1,52 +1,38 @@
-Arduino Star-Delta Controller
+# Arduino Star-Delta Controller  
+**Mode: ON → STAR → DELTA dengan Proteksi Overload**
 
-Mode: ON → STAR → DELTA dengan Proteksi Overload
+Sistem ini mengontrol rangkaian motor 3-fase menggunakan metode **Star–Delta** dengan tombol ON, OFF, dan Overload. Urutan kerja:
 
-Kode berikut digunakan untuk mengontrol motor 3-fase dengan metode Star–Delta menggunakan tombol ON, OFF, dan Overload. Sistem bekerja dalam urutan:
-
-1. Tekan ON → RUN aktif → STAR menyala
-
-
-2. Setelah 5 detik → STAR mati → DELTA menyala
-
-
-3. Tekan OFF atau Overload → Semua output mati
-
-
-
+1. Tekan **ON** → RUN aktif → STAR menyala  
+2. Setelah **5 detik** → STAR mati → DELTA menyala  
+3. Tekan **OFF** atau **Overload** → Semua output mati
 
 ---
 
-🧩 Pin Configuration
+## 🧩 Pin Configuration
 
-Function	Pin
-
-ON Button	11
-OFF Button	12
-Overload Switch	13
-RUN LED	5
-STAR LED	6
-DELTA LED	7
-
-
+| Function        | Pin |
+|-----------------|-----|
+| ON Button       | 11  |
+| OFF Button      | 12  |
+| Overload Switch | 13  |
+| RUN LED         | 5   |
+| STAR LED        | 6   |
+| DELTA LED       | 7   |
 
 ---
 
-🧠 Flow Logic
+## 🧠 Flow Logic
 
-motorState = 0 → Motor OFF
-
-motorState = 1 → STAR mode aktif
-
-motorState = 2 → DELTA mode aktif
-
-
+- **motorState = 0** → Motor OFF  
+- **motorState = 1** → STAR mode aktif  
+- **motorState = 2** → DELTA mode aktif  
 
 ---
 
-🧪 Arduino Code
+## 🧪 Arduino Code
 
-
+```cpp
 const int onButton = 11;
 const int offButton = 12;
 const int overloadButton = 13;
